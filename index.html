@@ -3,13 +3,28 @@
     <h1>Team One Quiz</h1>
     <div>
       <h2>Question One - What kind of food do you like?</h2>
-      <select>
-        <option>Sushi</option>
-        <option>Pasta</option>
-        <option>Garlic Bread</option>
-        <option> Pizza </option> 
-        <option> Burritos </option> 
+      <select id="question-one">
+        <option value="sushi">Sushi</option>
+        <option value="pasta">Pasta</option>
+        <option value="garlic bread">Garlic Bread</option>
+        <option value="pizza"> Pizza </option> 
+        <option value="burritos"> Burritos </option> 
       </select>
     </div>
+    <button onclick="getResults()">Submit</button>
+    <script>
+      function getResults() {
+        var result = 'You should take a nap!';
+        var favoriteFood = document.querySelector('#question-one').value;
+        if (favoriteFood === 'pasta') {
+          result = 'You should make pasta';
+        } else if (favoriteFood === 'garlic bread') {
+          result = 'Do something else';
+        }
+        resultNode = document.createElement('h4');
+        resultNode.textContent = 'Result: ' + result;
+        document.querySelector('body').appendChild(resultNode);
+      }
+    </script>
   </body>
 </html>
