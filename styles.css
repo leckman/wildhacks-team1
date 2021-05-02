@@ -108,6 +108,6 @@ button:hover::before {
   padding: 20px;
 }
 
-img {
+.option img {
   width: 100px;
 }
