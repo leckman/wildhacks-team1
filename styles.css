@@ -94,3 +94,17 @@ button:hover::before {
     transform: translate(0rem, 0);
   }
 }
+.options {
+  display: flex;
+  width: 500px;
+  flex-flow: wrap;
+}
+
+.option {
+  width: 100px;
+  padding: 20px;
+}
+
+img {
+  width: 100px;
+}
