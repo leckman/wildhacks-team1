@@ -1,81 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto:wght@300&display=swap');
 
-
 body {
   font-family: 'Roboto', sans-serif;
 }
 
-
-h1, h2, h3, h4 {
-  color:firebrick;
+h1,
+h2,
+h3,
+h4 {
+  color: firebrick;
   font-family: 'Montserrat', sans-serif;
 }
 
+button {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  border: 0;
+  position: relative;
+  letter-spacing: 0.15em;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  outline: none;
+  font-size: 28px;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
+  color: black;
+  margin: 20px;
+}
 
+button::after,
+::before {
+  border: 0;
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+  border-radius: 50%;
+}
 
+button::before {
+  background-color: #c92918;
+  border: 0;
+  top: -0.75rem;
+  left: 0.5rem;
+}
+button::after {
+  background-color: #e74c3c;
+  top: 3rem;
+  left: 13rem;
+}
 
-  button {
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 700;
-    border: 0;
-    position: relative;
-    letter-spacing: 0.15em;
-    margin: 0 auto;
-    padding: 1rem 2.5rem;
-    background: transparent;
-    outline: none;
-    font-size: 28px;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
-    &::after,
-    &::before {
-      border: 0;
-      content: "";
-      position: absolute;
-      height: 40%;
-      width: 10%;
-      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      z-index: -2;
-      border-radius: 50%;
-      
-    }
-    &::before {
-      border: 0;
-      top: -0.75rem;
-      left: 0.5rem;
-      animation: topAnimation 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
-    }
-    &::after {
-      top: 3rem;
-      left: 13rem;
-      animation: bottomAnimation 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
-    }
-    &:hover {
-      color: white;
-      &::before,
-      &::after {
-        top: 0;
-        height: 100%;
-        width: 100%;
-        border-radius: 0;
-        animation: none;
-      }
-      &::after {
-        left: 0rem;
-      }
-      &::before {
-        top: 0.5rem;
-        left: 0.35rem;
-      }
-    }
-  }
+button:hover {
+  color: white;
+}
+
+button:hover::before,
+button:hover::after {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  animation: none;
+}
+button:hover::after {
+  left: 0rem;
+}
+button:hover::before {
+  top: 0.5rem;
+  left: 0.35rem;
 }
 
 * {
   box-sizing: border-box;
 }
-
 
 @keyframes topAnimation {
   from {
@@ -93,5 +94,3 @@ h1, h2, h3, h4 {
     transform: translate(0rem, 0);
   }
 }
-
-
